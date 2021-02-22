@@ -2,7 +2,9 @@
 
 source "https://rubygems.org"
 
-# Specify your gem's dependencies in bk_brew.gemspec
 gemspec
+
+gem 'pry'
+gem 'httparty', '~> 0.18.1'
 
 gem "rake", "~> 13.0"

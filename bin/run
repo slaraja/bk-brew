@@ -1,0 +1,7 @@
+#!/usr/bin/env ruby
+
+require_relative '../lib/environment.rb'
+
+CLI.new.run 
+#create a new instance of our CLI class and calling an instance method
+#could also be called welcome, start, etc and could also set it equal to an instance variable
