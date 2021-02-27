@@ -19,13 +19,17 @@ class Brewery
         @@all
     end 
 
-    # def self.find_by_num(num)
-    #     @@all.find()
+    def list_by_name
+        puts @name 
+    end 
+
+    # def self.get_breweries
+
     # end 
 
-    def self.get_breweries
-
-    end 
+        # def self.find_by_num(num)
+    #     @@all.find()
+    # end 
 
 
 end
