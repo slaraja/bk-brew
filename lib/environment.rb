@@ -1,7 +1,7 @@
 # require 'bk_brew/version'
 require 'pry'
 require 'httparty'
-require "open-uri"
+# require "open-uri"
 
 # require 'net/http'
 # require 'open-uri' # Allows us to send GET requests and receive the response

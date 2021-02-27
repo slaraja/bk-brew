@@ -1,14 +1,31 @@
-# class Brewery
+class Brewery
 
-#     attr_accessor :name, :address, :phone, :type
+    attr_accessor :name, :brewery_type, :address, :phone, :website
 
-#     def initialize
+    @@all = [] #access objects in other classes
 
-#     end 
+    #change to mass assignment later
+    def initialize(title, type, street, phone_num, web_link)
+        @name = title
+        @brewery_type = type
+        @address = street
+        @phone = phone_num
+        @website = web_link
+        #iterate and acess elements from the class
+        @@all << self #maybe build a save method?
+    end 
 
-#     def get_breweries
+    def self.all
+        @@all
+    end 
 
-#     end 
+    # def self.find_by_num(num)
+    #     @@all.find()
+    # end 
+
+    def self.get_breweries
+
+    end 
 
 
-# end
+end

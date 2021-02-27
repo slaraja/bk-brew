@@ -1,12 +1,20 @@
 #sole purpose is to access remote data
-
-
 class API
 
-    def self.get_breweries(url)
-        url = 'https://api.openbrewerydb.org/breweries'
+    def self.get_breweries
+        url = 'https://api.openbrewerydb.org/breweries?by_city=brooklyn'
+        #get the data
         response = HTTParty.get(url)
-        response.parsed_response
-    end
+        #create objects from the data
+        response.each do |hash| 
+        Brewery.new(
+            hash['name'],
+            hash['brewery_type'],
+            hash['address'],
+            hash['phone'],
+            hash['website'],
+        ) 
+        end 
+    end 
 
 end 
