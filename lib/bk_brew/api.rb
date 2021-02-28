@@ -1,7 +1,7 @@
 #sole purpose is to access remote data
 class API
 
-    def self.get_breweries
+    def self.list_breweries
         url = 'https://api.openbrewerydb.org/breweries?by_city=brooklyn'
         #get the data
         response = HTTParty.get(url)

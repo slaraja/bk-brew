@@ -8,12 +8,11 @@ class CLI
         puts "Welcome to the Brooklyn Brew app!"
         list_breweries
         brewery_choice
-        # self.get_breweries
     end 
 
     def list_breweries
-        API.get_breweries
-        all.each.with_index(1) do |brewery, i|
+        API.list_breweries
+        Brewery.all.each.with_index(1) do |brewery, i|
             puts "#{i}. #{brewery.name}"
         end 
     end 
@@ -36,30 +35,14 @@ class CLI
         if input == "brews"
             list_breweries
         elsif input.to_i > 0
-            if brewery = self.find(input.to_i)
-                brewery_details(brewery) #need argument?
+            self.find_by_num
+            brewery_details(brewery) 
             end 
         end 
-    #     choice = gets.strip #gets.chomp?
-
     end 
 
     def brewery_details
         puts "Here is more information about the brewery you chose."
     end 
 
-
-    # def breweries_more
-    #     puts "Would you like to learn about another brewery? Type Y or N. Choosing N will exit the program."
-    #     # if Y
-    #     #     get_breweries
-    #     #     brewery_choice
-    #     # elsif N
-    #     #     exit
-    #     # else user types anything else
-    #     #     puts "Oops! You mistyped something. Type Y if you'd like to learn about another brewery or N to exit"
-    #     # end 
-    # end 
-
-end 
 end 
