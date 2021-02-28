@@ -12,7 +12,7 @@ class API
             hash['brewery_type'],
             hash['address'],
             hash['phone'],
-            hash['website'],
+            hash['website_url'],
         ) 
         end 
     end 

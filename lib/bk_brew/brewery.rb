@@ -1,6 +1,6 @@
 class Brewery
 
-    attr_accessor :name, :brewery_type, :address, :phone, :website
+    attr_accessor :name, :brewery_type, :address, :phone, :website_url
 
     @@all = [] #access objects in other classes
 
@@ -10,7 +10,7 @@ class Brewery
         @brewery_type = type
         @address = street
         @phone = phone_num
-        @website = web_link
+        @website_url = web_link
         #iterate and acess elements from the class
         @@all << self #maybe build a save method?
     end 
@@ -19,17 +19,8 @@ class Brewery
         @@all
     end 
 
-    def list_by_name
-        puts @name 
-    end 
-
-    # def self.get_breweries
-
-    # end 
-
-        # def self.find_by_num(num)
-    #     @@all.find()
-    # end 
-
+    def self.find(id)
+        self.all[id-1]
+    end
 
 end

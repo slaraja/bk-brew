@@ -18,44 +18,45 @@ class CLI
             puts "#{i}. #{brewery.name}"
         end 
     end 
-        
-        # puts get_breweries
-        # # breweries = JSON.parse(self.get_breweries)
-        # # #puts out a list of breweries
-        # breweries = get_breweries.new
-        # puts breweries.get_breweries
 
     def brewery_choice
-        list_breweries
         choice = nil
         while choice != "exit"
             puts ""
             puts "Please enter a number from 1-40 to learn more about a brewery."
             puts "Enter exit to end the program."
             choice = gets.strip.downcase
-            choice.to_i > 0
-            # self.find_by_num
+
+            brewery = Brewery.find(choice.to_i)
+
             brewery_details(brewery)
-        
-    end 
-        #     self.find_by_num
-        #     brewery_details(brewery) 
-        #     end 
-        # if input == "brews"
-        #     list_breweries
-        # elsif input.to_i > 0
-        #     self.find_by_num
-        #     brewery_details(brewery) 
-        #     end 
-        # end 
-    end 
 
-    def brewery_details
+            puts ""
+            puts "Still thirsty? Type brew if you want to get details about another brewery."
+            puts "Type exit to end the program."
+            choice = gets.strip.downcase
+
+            if choice == "brew"
+                list_breweries
+              elsif choice == exit
+                puts "It's closing time. Cheers!"
+                exit
+              else
+                puts ""
+                puts "Invalid choice. Please type brew to see the brewery list again or exit."
+                brewery_choice
+            end
+        end
+    end
+
+    def brewery_details(brewery)
         puts "Here is more information about the brewery you chose."
-    end 
-
-    def more_breweries
-        puts "Enter brews to see the list of breweries again."
+        puts ""
+        puts "Name: #{brewery.name}"
+        puts "Type: #{brewery.brewery_type}"
+        puts "Address: #{brewery.address}"
+        puts "Phone: #{brewery.phone}"
+        puts "Website: #{brewery.website_url}"
     end 
 
 end 
