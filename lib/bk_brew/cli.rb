@@ -54,7 +54,7 @@ class CLI
         puts ""
         puts "Name: #{brewery.name}"
         puts "Type: #{brewery.brewery_type}"
-        puts "Address: #{brewery.address}"
+        puts "Address: #{brewery.street}"
         puts "Phone: #{brewery.phone}"
         puts "Website: #{brewery.website_url}"
     end 

@@ -10,7 +10,7 @@ class API
         Brewery.new(
             hash['name'],
             hash['brewery_type'],
-            hash['address'],
+            hash['street'],
             hash['phone'],
             hash['website_url'],
         ) 
