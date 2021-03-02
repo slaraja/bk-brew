@@ -25,7 +25,7 @@ class CLI
         while choice != "exit"
             puts ""
             puts "Please enter a number from 1-20 to learn more about a brewery."
-            puts "Enter exit to end the program."
+            # puts "Enter exit to end the program."
             choice = gets.strip.downcase
 
             brewery = Brewery.find(choice.to_i)
@@ -34,23 +34,27 @@ class CLI
 
             puts ""
             puts "Still thirsty? Type brew if you want to get details about another brewery."
-            puts "Type exit to end the program."
+            puts "Otherwise, type exit to end the program."
+            puts ""
             choice = gets.strip.downcase
 
             if choice == "brew"
                 Brewery.list_breweries
-              elsif choice == exit
+              elsif choice == "exit"
+                puts ""
                 puts "It's closing time. Cheers!"
+                puts ""
                 exit
               else
                 puts ""
-                puts "Invalid choice. Please type brew to see the brewery list again or exit."
+                puts "Invalid choice."
                 brewery_choice
             end
         end
     end
 
     def brewery_details(brewery)
+        puts ""
         puts "Here is more information about the brewery you chose."
         puts ""
         puts "Name: #{brewery.name}"
