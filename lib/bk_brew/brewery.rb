@@ -23,4 +23,9 @@ class Brewery
         self.all[id-1]
     end
 
+    def self.list_breweries
+       self.all.each.with_index(1) do |brewery, i|
+            puts "#{i}. #{brewery.name}"
+       end
+       end 
 end

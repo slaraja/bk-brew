@@ -14,16 +14,17 @@ class CLI
 
     def list_breweries
         API.list_breweries
-        Brewery.all.each.with_index(1) do |brewery, i|
-            puts "#{i}. #{brewery.name}"
-        end 
+        Brewery.list_breweries
+        # Brewery.all.each.with_index(1) do |brewery, i|
+        #     puts "#{i}. #{brewery.name}"
+        # end 
     end 
 
     def brewery_choice
         choice = nil
         while choice != "exit"
             puts ""
-            puts "Please enter a number from 1-40 to learn more about a brewery."
+            puts "Please enter a number from 1-20 to learn more about a brewery."
             puts "Enter exit to end the program."
             choice = gets.strip.downcase
 
@@ -37,7 +38,7 @@ class CLI
             choice = gets.strip.downcase
 
             if choice == "brew"
-                list_breweries
+                Brewery.list_breweries
               elsif choice == exit
                 puts "It's closing time. Cheers!"
                 exit
