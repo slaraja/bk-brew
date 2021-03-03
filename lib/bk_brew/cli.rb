@@ -22,20 +22,20 @@ class CLI
         puts "Please enter a number from 1-20 to learn more about a brewery."
         puts "Type exit if you'd like to end the program."
         puts ""
-        choice = gets.strip.downcase
-        brewery = Brewery.find(choice.to_i)
 
+        choice = gets.strip.downcase
+
+        brewery = Brewery.find(choice.to_i)
 
         if choice == "exit"
             program_exit
         # elsif choice != "exit" || choice.to_i.between?(1, 20) 
-        #     puts "Invalid choice."
-        #     list_breweries
-        #     brewery_choice
+        #     program_error
         else choice.to_i.between?(1, 20)
             brewery_details(brewery)
             still_thirsty
         end
+
     end 
 
     def still_thirsty
@@ -43,17 +43,16 @@ class CLI
         puts "Still thirsty? Type brew if you want to get details about another brewery."
         puts "Otherwise, type exit to end the program."
         puts ""
-
+       
         choice = gets.strip.downcase
 
         if choice == "brew"
-           list_breweries
+           Brewery.list_breweries
            brewery_choice
-        elsif choice == "exit"
+        else choice == "exit"
             program_exit
-        else choice !=  "exit" || "brew"
-            puts "Invalid choice."
-            still_thirsty
+        # else choice !=  "exit" || "brew"
+        #     program_error
         end
     end 
 
@@ -62,6 +61,12 @@ class CLI
         puts "It's closing time. Cheers!"
         puts ""
         exit
+    end 
+
+    def program_error
+        puts "Invalid choice."
+        Brewery.list_breweries
+        brewery_choice
     end 
 
     def brewery_details(brewery)
