@@ -20,52 +20,23 @@ class CLI
     def brewery_choice
         puts ""
         puts "Please enter a number from 1-20 to learn more about a brewery."
-        puts "Type exit to end the program."
+        puts "Type exit if you'd like to end the program."
+        puts ""
         choice = gets.strip.downcase
+        brewery = Brewery.find(choice.to_i)
+
 
         if choice == "exit"
             program_exit
-        elsif choice != "exit" || choice.to_i.between?(1, 20)
-            puts "Invalid choice."
-            list_breweries
-            brewery_choice
+        # elsif choice != "exit" || choice.to_i.between?(1, 20) 
+        #     puts "Invalid choice."
+        #     list_breweries
+        #     brewery_choice
         else choice.to_i.between?(1, 20)
-            brewery = Brewery.find(choice.to_i)
             brewery_details(brewery)
             still_thirsty
         end
     end 
-    
-
-    # def brewery_choice
-    #     choice = nil
-    #     while choice != "exit"
-    #         puts ""
-    #         puts "Please enter a number from 1-20 to learn more about a brewery."
-    #         choice = gets.strip.downcase
-
-    #         brewery = Brewery.find(choice.to_i)
-
-    #         brewery_details(brewery)
-
-    #         still_thirsty
-
-    #         choice = gets.strip.downcase
-
-    #         if choice == "brew"
-    #             Brewery.list_breweries
-    #         elsif choice == "exit"
-    #             puts ""
-    #             puts "It's closing time. Cheers!"
-    #             puts ""
-    #             exit
-    #         else 
-    #             puts ""
-    #             puts "Invalid choice."
-    #             still_thirsty
-    #         end
-    #     end
-    # end
 
     def still_thirsty
         puts ""
@@ -78,8 +49,11 @@ class CLI
         if choice == "brew"
            list_breweries
            brewery_choice
-        else choice == "exit"
+        elsif choice == "exit"
             program_exit
+        else choice !=  "exit" || "brew"
+            puts "Invalid choice."
+            still_thirsty
         end
     end 
 
