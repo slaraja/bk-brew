@@ -12,7 +12,7 @@ class Brewery
         @phone = phone_num
         @website_url = web_link
         #iterate and acess elements from the class
-        @@all << self #maybe build a save method?
+        @@all << self 
     end 
 
     def self.all
@@ -27,5 +27,6 @@ class Brewery
        self.all.each.with_index(1) do |brewery, i|
             puts "#{i}. #{brewery.name}"
        end
-       end 
+    end 
+    
 end
