@@ -31,9 +31,12 @@ class CLI
             program_exit
         # elsif choice != "exit" || choice.to_i.between?(1, 20) 
         #     program_error
-        else choice.to_i.between?(1, 20)
+        elsif choice.to_i.between?(1, 20)
+            puts "You chose a number between 1 and 20."
             brewery_details(brewery)
             still_thirsty
+        else
+            program_error
         end
 
     end 
@@ -49,10 +52,10 @@ class CLI
         if choice == "brew"
            Brewery.list_breweries
            brewery_choice
-        else choice == "exit"
+        elsif choice == "exit"
             program_exit
-        # else choice !=  "exit" || "brew"
-        #     program_error
+        else 
+            program_error
         end
     end 
 
