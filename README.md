@@ -2,7 +2,9 @@ Brooklyn Brew
 
 Description: 
 
-Allows a user to learn more information about breweries in Brooklyn. Users will be provided with a list of 20 breweries in Brooklyn. The user can type in a number from 1-20 to learn more. Upon selecting a number, the user will receive more details about their brewery selection.
+Allows a user to learn more information about breweries in Brooklyn. Users will be provided with a list of 20 breweries in Brooklyn. The user can type in a number from 1-20 to learn more. Upon selecting a number, the user will receive more details about their brewery selection. 
+
+Data Credit: Open Brewery DB (https://www.openbrewerydb.org/)
 
 Install Instructions:
 
