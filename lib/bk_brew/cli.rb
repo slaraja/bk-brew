@@ -64,6 +64,7 @@ class CLI
     def program_error
         puts "Invalid choice."
         sleep(1)
+        puts""
         Brewery.list_breweries
         brewery_choice
     end 
