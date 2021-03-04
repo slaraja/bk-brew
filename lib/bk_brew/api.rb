@@ -1,4 +1,3 @@
-#sole purpose is to access remote data
 class API
 
     def self.list_breweries

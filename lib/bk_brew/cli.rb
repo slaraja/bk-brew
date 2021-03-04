@@ -1,6 +1,3 @@
-#handles all interaction with the user
-#middleman between api and brewery
-#only class that has any puts or gets statements
 
 class CLI
 
@@ -29,8 +26,6 @@ class CLI
 
         if choice == "exit"
             program_exit
-        # elsif choice != "exit" || choice.to_i.between?(1, 20) 
-        #     program_error
         elsif choice.to_i.between?(1, 20)
             puts "You chose a number between 1 and 20."
             brewery_details(brewery)
@@ -68,6 +63,7 @@ class CLI
 
     def program_error
         puts "Invalid choice."
+        sleep(1)
         Brewery.list_breweries
         brewery_choice
     end 
